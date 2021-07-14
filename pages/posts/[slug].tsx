@@ -1,0 +1,70 @@
+import { useRouter } from "next/router";
+import Layout from "../../components/Layout";
+import { getAllPosts, getPostBySlug } from "../../lib/api";
+import markdownToHtml from "../../lib/markdownToHtml";
+import Post from "../../types/post";
+import ErrorPage from "next/error";
+import markdownStyles from "../../styles/markdown-styles.module.css";
+
+export default function Project({ post }: { post: Post }) {
+  const router = useRouter();
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+
+  return (
+    <Layout title="Project">
+      {/* // Todo: add loader fallback */}
+      <article className="mb-32">
+        {/* // Todo: add meta tag */}
+        <h1>{post.title}</h1>
+        <div
+          className={markdownStyles["markdown"]}
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        ></div>
+      </article>
+    </Layout>
+  );
+}
+
+interface Params {
+  params: {
+    slug: string;
+  };
+}
+
+export const getStaticProps = async ({ params }: Params) => {
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "date",
+    "slug",
+    "content",
+    "ogImage",
+    "coverImage",
+  ]);
+  const content = await markdownToHtml(post.content || "");
+
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const posts = getAllPosts(["slug"]);
+
+  return {
+    paths: posts.map((posts) => {
+      return {
+        params: {
+          slug: posts.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+};

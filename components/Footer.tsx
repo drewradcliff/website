@@ -1,8 +1,8 @@
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-center">
+    <footer className="flex justify-between items-center mb-16">
       <p>
         Built with{" "}
         <a
@@ -18,6 +18,9 @@ export default function Footer() {
         </a>
         <a href="https://twitter.com/aradcliff0">
           <FaTwitter className="hover:text-gray-500 cursor-pointer" />
+        </a>
+        <a href="https://www.linkedin.com/in/aradcliff/">
+          <FaLinkedinIn className="hover:text-gray-500 cursor-pointer" />
         </a>
       </div>
     </footer>
