@@ -1,10 +1,12 @@
+import moment from "moment";
+import ErrorPage from "next/error";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
-import Post from "../../types/post";
-import ErrorPage from "next/error";
 import markdownStyles from "../../styles/markdown-styles.module.css";
+import Post from "../../types/post";
 
 export default function Project({ post }: { post: Post }) {
   const router = useRouter();
@@ -17,7 +19,15 @@ export default function Project({ post }: { post: Post }) {
       {/* // Todo: add loader fallback */}
       <article className="mb-32">
         {/* // Todo: add meta tag */}
-        <h1>{post.title}</h1>
+        <div className="flex justify-between items-center">
+          <h1 className="text-4xl">{post.title}</h1>
+          <h2>{moment(new Date(post.date)).format("MMM YYYY")}</h2>
+        </div>
+        {post.ogImage.url && (
+          <div className="h-[400px] w-full relative my-8">
+            <Image src={post.ogImage.url} layout="fill" objectFit="contain" />
+          </div>
+        )}
         <div
           className={markdownStyles["markdown"]}
           dangerouslySetInnerHTML={{ __html: post.content }}

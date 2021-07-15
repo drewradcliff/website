@@ -1,13 +1,15 @@
+import _ from "lodash";
+import React from "react";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
-import Post from "../types/post";
 import { getAllPosts } from "../lib/api";
+import Post from "../types/post";
 
 interface Props {
-  allPosts: Post[];
+  [key: string]: any;
 }
 
-export default function Home({ allPosts }: Props) {
+export default function Home({ sortedPosts }: Props) {
   return (
     <Layout title="Drew Radcliff Archive">
       <div className="mb-8">
@@ -22,12 +24,18 @@ export default function Home({ allPosts }: Props) {
           </a>
         </h2>
       </div>
-      {/* <h1 className="text-2xl my-4">2021</h1> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-        {allPosts.map((post) => (
-          <Card key={post.slug} post={post} />
+      {Object.keys(sortedPosts)
+        .reverse()
+        .map((key: string) => (
+          <React.Fragment key={key}>
+            <h1 className="text-2xl my-4">{key}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+              {sortedPosts[key].map((post: Post) => (
+                <Card key={post.slug} post={post} />
+              ))}
+            </div>
+          </React.Fragment>
         ))}
-      </div>
     </Layout>
   );
 }
@@ -42,7 +50,11 @@ export const getStaticProps = async () => {
     "tag",
   ]);
 
+  const sortedPosts = _.groupBy(allPosts, (post: Post) =>
+    post.date.slice(0, 4)
+  );
+
   return {
-    props: { allPosts },
+    props: { sortedPosts },
   };
 };

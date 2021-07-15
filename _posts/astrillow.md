@@ -1,11 +1,13 @@
 ---
 title: 'Astrillow'
 excerpt: 'A real-estate application to purchase asteroids.'
-coverImage: '/test-image2.jpg'
+coverImage: '/astrillow/astrillow-image.png'
 date: '2020-10-19'
 ogImage:
-  url: '/test-image2.jpg'
+  url: '/astrillow/astrillow.gif'
 tag: 'personal'
 ---
+
+<https://github.com/sirAMPR/astrillow-frontend>
 
 A full stack real-estate application to purchase asteroids. Built with React using WebGL for interactive 3D space maps. Backend built using DJango and JWT for authentication.
