@@ -18,6 +18,7 @@ export default function Card({ post }: Props) {
             placeholder="blur"
             layout="fill"
             objectFit="cover"
+            alt={post.slug}
           />
         </div>
         <div className="flex justify-between items-center p-2">

@@ -1,7 +1,7 @@
 ---
 title: 'Astrillow'
 excerpt: 'A real-estate application to purchase asteroids.'
-coverImage: '/astrillow/astrillow-image.png'
+coverImage: '/astrillow/astrillow-image.jpg'
 date: '2020-10-19'
 ogImage:
   url: '/astrillow/astrillow.gif'

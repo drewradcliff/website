@@ -1,7 +1,7 @@
 ---
 title: 'Geoguessr Clone'
 excerpt: 'A simple clone of Geoguessr.'
-coverImage: '/geoguessr-clone/geoguessr-clone-image.png'
+coverImage: '/geoguessr-clone/geoguessr-clone-image.jpg'
 date: '2020-07-16'
 ogImage:
   url: '/geoguessr-clone/geoguessr-clone-video.gif'
