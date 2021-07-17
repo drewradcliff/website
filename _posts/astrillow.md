@@ -10,4 +10,4 @@ tag: 'personal'
 
 <https://github.com/sirAMPR/astrillow-frontend>
 
-A full stack real-estate application to purchase asteroids. Built with React using WebGL for interactive 3D space maps. Backend built using DJango and JWT for authentication.
+A full stack real-estate application to purchase asteroids. Built with React using WebGL for interactive 3D space maps. Backend built using Django and JWT for authentication.

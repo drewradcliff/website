@@ -13,7 +13,7 @@ export default function Home({ sortedPosts }: Props) {
   return (
     <Layout title="Drew Radcliff Archive">
       <div className="mb-8">
-        <h1 className="text-2xl">Drew Radcliff</h1>
+        <h1 className="text-3xl">Drew Radcliff</h1>
         <h2>
           React Developer @{" "}
           <a

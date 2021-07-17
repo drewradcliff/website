@@ -7,7 +7,7 @@ interface Props {
 
 export default function About({ image }: Props) {
   return (
-    <Layout title="about">
+    <Layout title="About">
       <h1 className="text-3xl">About</h1>
       <div className="rounded-full overflow-hidden h-64 w-64 relative my-10">
         <Image

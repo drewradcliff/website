@@ -15,7 +15,7 @@ export default function Project({ post }: { post: Post }) {
   }
 
   return (
-    <Layout title="Project">
+    <Layout title={post.title}>
       {/* // Todo: add loader fallback */}
       <article className="mb-32">
         {/* // Todo: add meta tag */}
@@ -24,8 +24,14 @@ export default function Project({ post }: { post: Post }) {
           <h2>{moment(new Date(post.date)).format("MMM YYYY")}</h2>
         </div>
         {post.ogImage.url && (
-          <div className="h-[400px] w-full relative my-8">
-            <Image src={post.ogImage.url} layout="fill" objectFit="contain" />
+          <div className="h-[600px] relative">
+            <Image
+              src={post.ogImage.url}
+              layout="fill"
+              objectFit="contain"
+              placeholder="blur"
+              blurDataURL={post.ogImage.url}
+            />
           </div>
         )}
         <div
