@@ -6,7 +6,6 @@ date: '2020-10-19'
 ogImage:
   url: '/astrillow/astrillow.gif'
 tag: 'personal'
-tagColor: 'blue'
 ---
 
 <https://github.com/sirAMPR/astrillow-frontend>

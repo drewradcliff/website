@@ -48,7 +48,6 @@ export const getStaticProps = async () => {
     "coverImage",
     "excerpt",
     "tag",
-    "tagColor",
   ]);
 
   const sortedPosts = _.groupBy(allPosts, (post: Post) =>

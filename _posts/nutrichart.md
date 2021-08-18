@@ -6,7 +6,6 @@ date: '2021-07'
 ogImage:
   url: '/nutrichart/cover-image.jpeg'
 tag: 'personal'
-tagColor: 'blue'
 ---
 
 A nutrition calculator for customers to track their food for their favorite restaurants. Built with Typescript, Next.js, and Prisma.

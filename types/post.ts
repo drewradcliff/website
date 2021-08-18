@@ -9,5 +9,4 @@ export default interface Post {
   }
   content: string
   tag: string
-  tagColor: string
 }

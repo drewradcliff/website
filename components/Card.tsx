@@ -25,9 +25,7 @@ export default function Card({ post }: Props) {
           <h1 className="text-lg hover:text-gray-500 whitespace-nowrap overflow-hidden overflow-ellipsis">
             {post.title}
           </h1>
-          <span
-            className={`text-${post.tagColor}-900 bg-${post.tagColor}-100 rounded-full px-2 py-1 text-sm`}
-          >
+          <span className="bg-gray-500 rounded-full px-2 py-1 text-white text-sm">
             {post.tag}
           </span>
         </div>
