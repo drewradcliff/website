@@ -6,6 +6,7 @@ date: '2020-07-16'
 ogImage:
   url: '/geoguessr-clone/geoguessr-clone-video.gif'
 tag: 'personal'
+tagColor: 'blue'
 ---
 
 <https://github.com/sirAMPR/geoguessr-clone>

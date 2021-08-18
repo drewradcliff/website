@@ -6,6 +6,7 @@ date: '2021-06'
 ogImage:
   url: ''
 tag: 'work'
+tagColor: 'red'
 ---
 
 [ordercollie.com](https://www.ordercollie.com/)
