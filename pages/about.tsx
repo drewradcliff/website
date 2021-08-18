@@ -23,7 +23,7 @@ export default function About({ image }: Props) {
         Purdue University.
       </p>
       <p className="py-2 mb-8">
-        Currently empoloyed at Blind Robot. In my day-to-day work I use frontend
+        Currently employed at Blind Robot. In my day-to-day work I use frontend
         tools such as React, GraphQL, and MongoDB.
       </p>
     </Layout>
