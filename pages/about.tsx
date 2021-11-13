@@ -19,19 +19,19 @@ export default function About({ image }: Props) {
         />
       </div>
       <p className="py-2">
-        I work in Indianapolis as a React Developer. I studied engineering at
-        Purdue University.
+        I am a Frontend Software Engineer living in Indianapolis. I studied
+        engineering at Purdue University and Kenzie Academy.
       </p>
       <p className="py-2 mb-8">
-        Currently employed at Blind Robot. In my day-to-day work I use frontend
-        tools such as React, GraphQL, and MongoDB.
+        Currently employed at Allocations. In my day-to-day work I use tools
+        such as React, GraphQL, and MongoDB.
       </p>
     </Layout>
   );
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://api.github.com/users/sirAMPR");
+  const res = await fetch("https://api.github.com/users/drewradcliff");
   const user = await res.json();
 
   return {
