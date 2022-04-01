@@ -13,7 +13,7 @@ export default function Footer() {
         </a>
       </p>
       <div className="flex space-x-4">
-        <a href="https://github.com/sirAMPR">
+        <a href="https://github.com/drewradcliff">
           <FaGithub className="hover:text-gray-500 cursor-pointer" />
         </a>
         <a href="https://twitter.com/aradcliff0">

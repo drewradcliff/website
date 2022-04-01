@@ -23,8 +23,8 @@ export default function About({ image }: Props) {
         engineering at Purdue University and Kenzie Academy.
       </p>
       <p className="py-2 mb-8">
-        Currently employed at Allocations. In my day-to-day work I use tools
-        such as React, GraphQL, and MongoDB.
+        In my day-to-day work I use tools
+        such as Next.js, GraphQL, and MongoDB.
       </p>
     </Layout>
   );

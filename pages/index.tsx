@@ -15,13 +15,7 @@ export default function Home({ sortedPosts }: Props) {
       <div className="mb-8">
         <h1 className="text-3xl">Drew Radcliff</h1>
         <h2>
-          Frontend Software Engineer @{" "}
-          <a
-            className="text-blue-500 hover:text-blue-600"
-            href="https://www.allocations.com/"
-          >
-            Allocations
-          </a>
+          Frontend Software Engineer
         </h2>
       </div>
       {Object.keys(sortedPosts)
