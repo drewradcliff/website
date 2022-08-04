@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply min-h-screen;
-    background: 
-      linear-gradient(330deg, rgb(255 96 92 / 30%) 10%, rgb(255 212 0 / 0%) 50%), 
-      linear-gradient(30deg, rgb(2 112 178 / 30%) 10%, rgb(255 212 0 / 0%) 50%);
-  }
+.gradient {
+  background: 
+    linear-gradient(330deg, rgb(255 96 92 / 30%) 10%, rgb(255 212 0 / 0%) 50%), 
+    linear-gradient(30deg, rgb(2 112 178 / 30%) 10%, rgb(255 212 0 / 0%) 50%);
 }
