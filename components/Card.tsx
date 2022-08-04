@@ -21,7 +21,7 @@ export default function Card({ post }: Props) {
           height={100}
           alt={post.slug}
         />
-        <div className="flex justify-between items-center p-2 bg-white">
+        <div className="flex justify-between items-center p-2 bg-white dark:bg-gray-700">
           <h1 className="text-lg hover:text-gray-500 whitespace-nowrap overflow-hidden overflow-ellipsis">
             {post.title}
           </h1>
