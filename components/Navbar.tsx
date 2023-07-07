@@ -7,11 +7,11 @@ export default function Navbar() {
   return (
     <div className="shadow-border">
       <div className="flex space-x-4 py-4">
-        <Link href={"/"}>
-          <a className="hover:text-gray-500">Home</a>
+        <Link href={"/"} className="hover:text-gray-500">
+          Home
         </Link>
-        <Link href={"/about"}>
-          <a className="hover:text-gray-500">About</a>
+        <Link href={"/about"} className="hover:text-gray-500">
+          About
         </Link>
       </div>
     </div>

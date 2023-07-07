@@ -1,6 +1,6 @@
 import moment from "moment";
 import ErrorPage from "next/error";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
