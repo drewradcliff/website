@@ -1,27 +1,22 @@
-import moment from "moment";
-import { getFeed } from "../lib/rss";
 import Image from "next/image";
 import Posts from "./Posts";
+import Ticks from "./Ticks";
 
 export default async function Home() {
-  const feed = await getFeed(
-    "https://www.mountainproject.com/rss/user-ticks/200263134"
-  );
-
   return (
     <>
-      <h1 className="text-4xl mb-8">Drew Radcliff</h1>
+      <h1 className="mb-8 text-4xl">Drew Radcliff</h1>
       <p className="mb-8 text-gray-300">
         I am a Software Developer at{" "}
         <a
-          className="text-blue-200 underline-offset-2 hover:underline hover:text-blue-100 ease-out transition duration-300"
+          className="text-blue-200 underline-offset-2 transition duration-300 ease-out hover:text-blue-100 hover:underline"
           href="https://www.ally.com/"
         >
           Ally
         </a>
         . I like programming and debugging bouldering problems.
       </p>
-      <div className="grid grid-cols-3 mb-20 gap-3">
+      <div className="mb-20 grid grid-cols-3 gap-3">
         <div className="relative">
           <Image
             className="rounded-md"
@@ -32,14 +27,14 @@ export default async function Home() {
           />
         </div>
         <Image
-          className="rounded-md col-span-2"
+          className="col-span-2 rounded-md"
           src="/IMG_5474-0.jpg"
           height={600}
           width={600}
           alt="Image of climber in Moab"
         />
         <Image
-          className="rounded-md col-span-2"
+          className="col-span-2 rounded-md"
           src="/IMG_5665-1.jpg"
           height={600}
           width={600}
@@ -56,26 +51,9 @@ export default async function Home() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 mb-24">
+      <div className="mb-24 grid grid-cols-2">
         <Posts />
-        <div>
-          <h2 className="text-xl mb-4">Recent Ticks</h2>
-          <ul>
-            {feed.items.slice(0, 5).map((tick) => (
-              <li key={tick.guid} className="grid grid-cols-4">
-                <p className="text-gray-300">
-                  {moment(tick.isoDate).format("M.D.YY")}
-                </p>
-                <a
-                  className="col-span-3 text-blue-200 underline-offset-2 hover:underline hover:text-blue-100 ease-out transition duration-300 overflow-hidden overflow-ellipsis whitespace-nowrap"
-                  href={tick.link}
-                >
-                  {tick.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Ticks />
       </div>
     </>
   );

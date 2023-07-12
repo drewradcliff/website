@@ -20,8 +20,8 @@ export default function Home({ sortedPosts }: Props) {
         .reverse()
         .map((key: string) => (
           <React.Fragment key={key}>
-            <h1 className="text-2xl my-4">{key}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            <h1 className="my-4 text-2xl">{key}</h1>
+            <div className="mb-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {sortedPosts[key].map((post: Post) => (
                 <Card key={post.slug} post={post} />
               ))}
@@ -43,7 +43,7 @@ export const getStaticProps = async () => {
   ]);
 
   const sortedPosts = _.groupBy(allPosts, (post: Post) =>
-    post.date.slice(0, 4)
+    post.date.slice(0, 4),
   );
 
   return {

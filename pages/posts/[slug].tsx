@@ -19,12 +19,12 @@ export default function Project({ post }: { post: Post }) {
       {/* // Todo: add loader fallback */}
       <article className="mb-32">
         {/* // Todo: add meta tag */}
-        <div className="flex justify-between items-center pb-6">
+        <div className="flex items-center justify-between pb-6">
           <h1 className="text-4xl">{post.title}</h1>
           <h2>{moment(new Date(post.date)).format("MMM YYYY")}</h2>
         </div>
         {post.ogImage?.url && (
-          <div className="h-[600px] relative">
+          <div className="relative h-[600px]">
             <Image
               src={post.ogImage.url}
               layout="fill"

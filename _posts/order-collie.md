@@ -1,11 +1,11 @@
 ---
-title: 'Order Collie'
-excerpt: 'A real-estate application to purchase asteroids.'
-coverImage: '/order-collie/cover-image.png'
-date: '2021-06'
+title: "Order Collie"
+excerpt: "A real-estate application to purchase asteroids."
+coverImage: "/order-collie/cover-image.png"
+date: "2021-06"
 ogImage:
-  url: ''
-tag: 'work'
+  url: ""
+tag: "work"
 ---
 
 [ordercollie.com](https://www.ordercollie.com/)
