@@ -1,6 +1,7 @@
 import _ from "lodash";
 import { getAllPosts } from "../lib/api";
 import moment from "moment";
+import Link from "next/link";
 
 export default function Posts() {
   const allPosts = getAllPosts(["title", "date", "slug"]).slice(0, 5);
@@ -10,11 +11,16 @@ export default function Posts() {
       <h2 className="mb-4 text-xl">Recent Projects</h2>
       <ul>
         {allPosts.map((post) => (
-          <li key={post.slug} className="grid grid-cols-4">
-            <p>{moment(post.date).format("M.D.YY")}</p>
-            <a className="col-span-3" href={`posts/${post.slug}`}>
+          <li key={post.slug} className="grid grid-cols-4 font-light">
+            <p className="text-gray-300">
+              {moment(post.date).format("M.D.YY")}
+            </p>
+            <Link
+              className="col-span-3 overflow-hidden overflow-ellipsis whitespace-nowrap text-blue-200 underline-offset-2 transition duration-300 ease-out hover:text-blue-100 hover:underline"
+              href={`posts/${post.slug}`}
+            >
               {post.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

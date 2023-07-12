@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <>
       <h1 className="mb-8 text-4xl">Drew Radcliff</h1>
-      <p className="mb-8 text-gray-300">
+      <p className="mb-8 font-light text-gray-300">
         I am a Software Developer at{" "}
         <a
           className="text-blue-200 underline-offset-2 transition duration-300 ease-out hover:text-blue-100 hover:underline"
@@ -16,7 +16,7 @@ export default async function Home() {
         </a>
         . I like programming and debugging bouldering problems.
       </p>
-      <div className="mb-20 grid grid-cols-3 gap-3">
+      <div className="mb-20 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <div className="relative">
           <Image
             className="rounded-md"
@@ -51,7 +51,7 @@ export default async function Home() {
           />
         </div>
       </div>
-      <div className="mb-24 grid grid-cols-2">
+      <div className="mb-24 grid gap-4 sm:grid-cols-2">
         <Posts />
         <Ticks />
       </div>

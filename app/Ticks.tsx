@@ -11,7 +11,7 @@ export default async function Ticks() {
       <h2 className="mb-4 text-xl">Recent Ticks</h2>
       <ul>
         {feed.items.slice(0, 5).map((tick) => (
-          <li key={tick.guid} className="grid grid-cols-4">
+          <li key={tick.guid} className="grid grid-cols-4 font-light">
             <p className="text-gray-300">
               {moment(tick.isoDate).format("M.D.YY")}
             </p>
