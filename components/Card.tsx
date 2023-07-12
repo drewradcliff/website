@@ -1,6 +1,6 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
-import Post from "../types/post";
+import Post from "../types";
 
 interface Props {
   post: Post;

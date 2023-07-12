@@ -6,7 +6,7 @@ import Layout from "../../components/Layout";
 import { getAllPosts, getPostBySlug } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import markdownStyles from "../../styles/markdown-styles.module.css";
-import Post from "../../types/post";
+import Post from "../../types";
 
 export default function Project({ post }: { post: Post }) {
   const router = useRouter();

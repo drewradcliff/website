@@ -3,7 +3,7 @@ import React from "react";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
 import { getAllPosts } from "../lib/api";
-import Post from "../types/post";
+import Post from "../types";
 
 interface Props {
   [key: string]: any;
@@ -14,9 +14,7 @@ export default function Home({ sortedPosts }: Props) {
     <Layout title="Drew Radcliff Archive">
       <div className="mb-8">
         <h1 className="text-3xl">Drew Radcliff</h1>
-        <h2>
-          Frontend Software Engineer
-        </h2>
+        <h2>Frontend Software Engineer</h2>
       </div>
       {Object.keys(sortedPosts)
         .reverse()
