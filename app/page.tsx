@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Posts from "./Posts";
 import Ticks from "./Ticks";
+import Link from "next/link";
+import { LuGithub, LuLinkedin } from "react-icons/lu";
 
 export default async function Home() {
   return (
@@ -22,7 +24,6 @@ export default async function Home() {
             className="rounded-md"
             src="/IMG_6778-1.jpg"
             fill
-            objectFit="cover"
             alt="Image of climber in Moab"
           />
         </div>
@@ -31,23 +32,21 @@ export default async function Home() {
           src="/IMG_5474-0.jpg"
           height={600}
           width={600}
-          alt="Image of climber in Moab"
+          alt="Image of climber in Red River Gorge"
         />
         <Image
           className="col-span-2 rounded-md"
           src="/IMG_5665-1.jpg"
           height={600}
           width={600}
-          alt="Image of climber in Moab"
-          objectFit="cover"
+          alt="Image of Grand Teton"
         />
         <div className="relative">
           <Image
-            className="rounded-md"
+            className="rounded-md object-cover"
             src="/IMG_9660-1.jpg"
             fill
-            objectFit="cover"
-            alt="Image of climber in Moab"
+            alt="Image of climbers in Joshua Tree"
           />
         </div>
       </div>
@@ -55,6 +54,24 @@ export default async function Home() {
         <Posts />
         <Ticks />
       </div>
+      <footer className="flex gap-6 font-light text-blue-200 underline-offset-2 transition duration-300 ease-out">
+        <Link
+          href="https://github.com/drewradcliff"
+          className="hover:text-blue-100 hover:underline"
+        >
+          <div className="flex items-center gap-1">
+            <LuGithub /> GitHub
+          </div>
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/aradcliff/"
+          className="hover:text-blue-100 hover:underline"
+        >
+          <div className="flex items-center gap-1">
+            <LuLinkedin /> LinkedIn
+          </div>
+        </Link>
+      </footer>
     </>
   );
 }
