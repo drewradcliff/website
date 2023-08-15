@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Layout from "../components/Layout";
 
 interface Props {
@@ -9,7 +9,7 @@ export default function About({ image }: Props) {
   return (
     <Layout title="About">
       <h1 className="text-3xl">About</h1>
-      <div className="rounded-full overflow-hidden h-64 w-64 relative my-10">
+      <div className="relative my-10 h-64 w-64 overflow-hidden rounded-full">
         <Image
           src={image}
           layout="fill"
@@ -22,9 +22,8 @@ export default function About({ image }: Props) {
         I am a Frontend Software Engineer living in Indianapolis. I studied
         engineering at Purdue University and Kenzie Academy.
       </p>
-      <p className="py-2 mb-8">
-        In my day-to-day work I use tools
-        such as Next.js, GraphQL, and MongoDB.
+      <p className="mb-8 py-2">
+        In my day-to-day work I use tools such as Next.js, GraphQL, and MongoDB.
       </p>
     </Layout>
   );

@@ -2,7 +2,7 @@ import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-center mb-16">
+    <footer className="mb-16 flex items-center justify-between">
       <p>
         Built with{" "}
         <a
@@ -14,13 +14,13 @@ export default function Footer() {
       </p>
       <div className="flex space-x-4">
         <a href="https://github.com/drewradcliff">
-          <FaGithub className="hover:text-gray-500 cursor-pointer" />
+          <FaGithub className="cursor-pointer hover:text-gray-500" />
         </a>
         <a href="https://twitter.com/aradcliff0">
-          <FaTwitter className="hover:text-gray-500 cursor-pointer" />
+          <FaTwitter className="cursor-pointer hover:text-gray-500" />
         </a>
         <a href="https://www.linkedin.com/in/aradcliff/">
-          <FaLinkedinIn className="hover:text-gray-500 cursor-pointer" />
+          <FaLinkedinIn className="cursor-pointer hover:text-gray-500" />
         </a>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 ---
 title: "habit"
 excerpt: "A habit tracker."
+link: "https://github.com/drewradcliff/habit"
 coverImage: "/habit/habit-image.png"
 date: "2022-07-17"
 ogImage:
