@@ -8,10 +8,10 @@ export default async function Home() {
   return (
     <>
       <h1 className="mb-8 text-4xl">Drew Radcliff</h1>
-      <p className="mb-8 font-light text-gray-300">
+      <p className="mb-8 font-light dark:text-gray-300">
         I am a Software Developer at{" "}
         <a
-          className="text-blue-200 underline-offset-2 transition duration-300 ease-out hover:text-blue-100 hover:underline"
+          className="text-blue-700 underline-offset-2 transition duration-300 ease-out hover:text-blue-800 hover:underline dark:text-blue-200 dark:hover:text-blue-100"
           href="https://www.ally.com/"
         >
           Ally
@@ -23,6 +23,7 @@ export default async function Home() {
           <Image
             className="rounded-md"
             src="/IMG_6778-1.jpg"
+            quality={50}
             fill
             alt="Image of climber in Moab"
           />
@@ -54,10 +55,10 @@ export default async function Home() {
         <Posts />
         <Ticks />
       </div>
-      <footer className="flex gap-6 font-light text-blue-200 underline-offset-2 transition duration-300 ease-out">
+      <footer className="mb-8 flex gap-6 font-light text-blue-700 underline-offset-2 transition duration-300 ease-out dark:text-blue-200">
         <Link
           href="https://github.com/drewradcliff"
-          className="hover:text-blue-100 hover:underline"
+          className="hover:text-blue-800 hover:underline hover:dark:text-blue-100"
         >
           <div className="flex items-center gap-1">
             <LuGithub /> GitHub
@@ -65,7 +66,7 @@ export default async function Home() {
         </Link>
         <Link
           href="https://www.linkedin.com/in/aradcliff/"
-          className="hover:text-blue-100 hover:underline"
+          className="hover:text-blue-800 hover:underline hover:dark:text-blue-100"
         >
           <div className="flex items-center gap-1">
             <LuLinkedin /> LinkedIn

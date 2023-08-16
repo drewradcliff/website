@@ -12,11 +12,11 @@ export default async function Ticks() {
       <ul>
         {feed.items.slice(0, 5).map((tick) => (
           <li key={tick.guid} className="grid grid-cols-4 font-light">
-            <p className="text-gray-300">
+            <p className="dark:text-gray-300">
               {moment(tick.isoDate).format("M.D.YY")}
             </p>
             <a
-              className="col-span-3 overflow-hidden overflow-ellipsis whitespace-nowrap text-blue-200 underline-offset-2 transition duration-300 ease-out hover:text-blue-100 hover:underline"
+              className="col-span-3 overflow-hidden overflow-ellipsis whitespace-nowrap text-blue-700 underline-offset-2 transition duration-300 ease-out hover:text-blue-800 hover:underline dark:text-blue-200 hover:dark:text-blue-100"
               href={tick.link}
             >
               {tick.title}
