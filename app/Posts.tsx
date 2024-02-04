@@ -4,7 +4,7 @@ import moment from "moment";
 import Link from "next/link";
 
 export default function Posts() {
-  const allPosts = getAllPosts(["title", "date", "link", "slug"]).slice(0, 2);
+  const allPosts = getAllPosts(["title", "date", "link", "slug"]).slice(0, 3);
 
   return (
     <div>
@@ -18,6 +18,7 @@ export default function Posts() {
             <Link
               className="col-span-3 overflow-hidden overflow-ellipsis whitespace-nowrap text-blue-700 underline-offset-2 transition duration-300 ease-out hover:text-blue-800 hover:underline dark:text-blue-200 hover:dark:text-blue-100"
               href={link}
+              target="_blank"
             >
               {title}
             </Link>

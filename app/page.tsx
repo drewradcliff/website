@@ -12,7 +12,8 @@ export default async function Home() {
         I am a Software Developer at{" "}
         <a
           className="text-blue-700 underline-offset-2 transition duration-300 ease-out hover:text-blue-800 hover:underline dark:text-blue-200 dark:hover:text-blue-100"
-          href="https://www.ally.com/"
+          href="https://www.ally.com/invest/"
+          target="_blank"
         >
           Ally
         </a>
@@ -50,6 +51,21 @@ export default async function Home() {
             alt="Image of climbers in Joshua Tree"
           />
         </div>
+        <div className="relative">
+          <Image
+            className="rounded-md object-cover"
+            src="/IMG_6157.jpg"
+            fill
+            alt="Image of climbers in JoshIMG_6778-1ua Tree"
+          />
+        </div>
+        <Image
+          className="col-span-2 rounded-md"
+          src="/IMG20231229170446.jpg"
+          height={600}
+          width={600}
+          alt="Image of climber in Red River Gorge"
+        />
       </div>
       <div className="mb-24 grid gap-4 sm:grid-cols-2">
         <Posts />
@@ -59,6 +75,7 @@ export default async function Home() {
         <Link
           href="https://github.com/drewradcliff"
           className="hover:text-blue-800 hover:underline hover:dark:text-blue-100"
+          target="_blank"
         >
           <div className="flex items-center gap-1">
             <LuGithub /> GitHub
@@ -67,6 +84,7 @@ export default async function Home() {
         <Link
           href="https://www.linkedin.com/in/aradcliff/"
           className="hover:text-blue-800 hover:underline hover:dark:text-blue-100"
+          target="_blank"
         >
           <div className="flex items-center gap-1">
             <LuLinkedin /> LinkedIn
