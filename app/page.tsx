@@ -1,8 +1,9 @@
 import Image from "next/image";
-import Posts from "./Posts";
-import Ticks from "./Ticks";
 import Link from "next/link";
 import { LuGithub, LuLinkedin } from "react-icons/lu";
+import Kilter from "./kilter";
+import Posts from "./posts";
+import Ticks from "./ticks";
 
 export default async function Home() {
   return (
@@ -68,9 +69,14 @@ export default async function Home() {
         />
       </div>
       <div className="mb-24 grid gap-4 sm:grid-cols-2">
-        <Posts />
+        <div>
+          <Posts />
+          <div className="py-4" />
+          <Kilter />
+        </div>
         <Ticks />
       </div>
+
       <footer className="mb-8 flex gap-6 font-light text-blue-700 underline-offset-2 transition duration-300 ease-out dark:text-blue-200">
         <Link
           href="https://github.com/drewradcliff"

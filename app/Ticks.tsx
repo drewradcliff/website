@@ -9,7 +9,7 @@ export default async function Ticks() {
   return (
     <div>
       <div className="flex items-end pb-4">
-        <h2 className="pr-4 text-xl">Recent Ticks</h2>
+        <h2 className="pr-4 text-xl">Mountain Project Ticks</h2>
         <a
           className="text-sm font-light leading-7 text-blue-700 underline-offset-2 hover:text-blue-800 hover:underline dark:text-blue-200 hover:dark:text-blue-100"
           href="https://www.mountainproject.com/user/200263134/drew-radcliff/ticks"
