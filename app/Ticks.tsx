@@ -19,7 +19,7 @@ export default async function Ticks() {
         </a>
       </div>
       <ul>
-        {feed.items.slice(0, 10).map((tick) => (
+        {feed.items.slice(0, 5).map((tick) => (
           <li key={tick.guid} className="grid grid-cols-4 font-light">
             <p className="dark:text-gray-300">
               {moment(tick.isoDate).format("M.D.YY")}

@@ -4,7 +4,7 @@ import moment from "moment";
 import Link from "next/link";
 
 export default function Posts() {
-  const allPosts = getAllPosts(["title", "date", "link", "slug"]).slice(0, 3);
+  const allPosts = getAllPosts(["title", "date", "link", "slug"]).slice(0, 4);
 
   return (
     <div>
