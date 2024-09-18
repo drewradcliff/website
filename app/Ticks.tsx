@@ -2,9 +2,7 @@ import moment from "moment";
 import { getFeed } from "../lib/rss";
 
 export default async function Ticks() {
-  const feed = await getFeed(
-    "https://www.mountainproject.com/rss/user-ticks/200263134",
-  );
+  const feed = await getFeed(process.env.MP_RSS_FEED!);
 
   return (
     <div>
@@ -19,7 +17,7 @@ export default async function Ticks() {
         </a>
       </div>
       <ul>
-        {feed.items.slice(0, 10).map((tick) => (
+        {feed.slice(0, 10).map((tick) => (
           <li key={tick.guid} className="grid grid-cols-4 font-light">
             <p className="dark:text-gray-300">
               {moment(tick.isoDate).format("M.D.YY")}
