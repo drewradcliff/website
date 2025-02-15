@@ -9,7 +9,7 @@ export default async function Ticks() {
   return (
     <div>
       <div className="flex items-end pb-4">
-        <h2 className="pr-4 text-xl">Recent Ticks</h2>
+        <h2 className="pr-4 text-lg">Recent Ticks</h2>
         <a
           className="text-sm font-light leading-7 text-blue-700 underline-offset-2 hover:text-blue-800 hover:underline dark:text-blue-200 hover:dark:text-blue-100"
           href="https://www.mountainproject.com/user/200263134/drew-radcliff/ticks"
@@ -20,7 +20,7 @@ export default async function Ticks() {
       </div>
       <ul>
         {feed.items.slice(0, 5).map((tick) => (
-          <li key={tick.guid} className="grid grid-cols-4 font-light">
+          <li key={tick.guid} className="flex space-x-4 font-light">
             <p className="dark:text-gray-300">
               {moment(tick.isoDate).format("M.D.YY")}
             </p>
