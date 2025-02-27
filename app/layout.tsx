@@ -7,8 +7,6 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
-export const revalidate = 3600; // revalidate at most every hour
-
 export default function RootLayout({
   children,
 }: {
@@ -16,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={notoSansJP.className}>
-      <body className="mx-auto mt-12 max-w-2xl bg-white px-4 text-black dark:bg-gray-950 dark:text-white sm:mt-32 sm:p-0">
+      <body className="mx-auto h-full max-w-2xl px-4 pt-16 sm:pt-32">
         {children}
         <Analytics />
       </body>

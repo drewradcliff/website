@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background-100: #fff;
+    --background-200: #fafafa;
+    --primary-text: #171717;
+    --secondary-text: #666;
+    --link-text: #0091ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-100: #0a0a0a;
+      --background-200: #000;
+      --primary-text: #ededed;
+      --secondary-text: #a1a1a1;
+      --link-text: #52aeff;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background-200 text-primary;
+  }
+  html,
+  body,
+  :root {
+    height: 100%;
+  }
+}
