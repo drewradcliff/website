@@ -3,6 +3,8 @@ import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { getFeed } from "../lib/rss";
 import moment from "moment";
 
+export const revalidate = 3600; // Revalidate every hour
+
 const projects = [
   {
     id: 1,
