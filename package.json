@@ -12,7 +12,7 @@
     "@vercel/analytics": "^1.2.2",
     "eslint-config-next": "15.2.3",
     "moment": "^2.29.1",
-    "next": "15.2.3",
+    "next": "^15.5.6",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-icons": "^4.10.1",
@@ -30,5 +30,8 @@
   },
   "overrides": {
     "@types/react": "19.0.12"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
