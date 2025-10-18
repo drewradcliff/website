@@ -1,36 +1,9 @@
 import Link from "next/link";
-import { LuGithub, LuLinkedin } from "react-icons/lu";
+import { LuGithub, LuLinkedin, LuX } from "react-icons/lu";
 import { getFeed } from "../lib/rss";
 import moment from "moment";
 
 export const revalidate = 3600; // Revalidate every hour
-
-const projects = [
-  {
-    id: 1,
-    name: "mmmines",
-    date: "9.1.24",
-    link: "https://mmmines.fly.dev/",
-  },
-  {
-    id: 2,
-    name: "Actionist",
-    date: "2.1.24",
-    link: "https://www.actionist.app/",
-  },
-  {
-    id: 3,
-    name: "AI Blog",
-    date: "1.15.23",
-    link: "https://github.com/drewradcliff/ai-blog",
-  },
-  {
-    id: 4,
-    name: "habit",
-    date: "7.17.22",
-    link: "https://github.com/drewradcliff/habit",
-  },
-];
 
 export default async function Home() {
   const feed = await getFeed(
@@ -41,32 +14,9 @@ export default async function Home() {
     <>
       <h1 className="mb-8 text-2xl">Drew Radcliff</h1>
       <p className="mb-8 font-light text-secondary">
-        I am a Software Developer at{" "}
-        <a
-          className="text-link underline-offset-2 hover:underline"
-          href="https://www.ally.com/invest/"
-          target="_blank"
-        >
-          ally
-        </a>
-        . I like programming and debugging bouldering problems.
+        I like programming and debugging bouldering problems.
       </p>
       <div className="mb-24 grid gap-4">
-        <h2 className="text-lg text-primary">Recent Projects</h2>
-        <ul>
-          {projects.map(({ id, name, date, link }) => (
-            <li key={id} className="grid grid-cols-6 font-light ">
-              <span className="text-secondary">{date}</span>
-              <Link
-                className="col-span-5 overflow-hidden overflow-ellipsis whitespace-nowrap text-link underline-offset-2 hover:underline"
-                href={link}
-                target="_blank"
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
         <div className="flex items-end pb-4">
           <h2 className="pr-4 text-lg text-primary">Recent Ticks</h2>
           <a
@@ -105,13 +55,11 @@ export default async function Home() {
           </div>
         </Link>
         <Link
-          href="https://www.linkedin.com/in/aradcliff/"
+          href="https://x.com/aradcliff0"
           className="text-link hover:underline"
           target="_blank"
         >
-          <div className="flex items-center gap-1">
-            <LuLinkedin /> LinkedIn
-          </div>
+          <div className="flex items-center gap-1">@aradcliff0</div>
         </Link>
       </footer>
     </>
