@@ -1,67 +1,87 @@
-import Link from "next/link";
-import { LuGithub, LuLinkedin, LuX } from "react-icons/lu";
 import { getFeed } from "../lib/rss";
-import moment from "moment";
+import { Section } from "../components/Section";
+import { Socials } from "../components/Socials";
+import { TickList } from "../components/TickList";
+import { BookList } from "../components/BookList";
+import { MovieList } from "../components/MovieList";
+import { PhotoCarousel } from "../components/PhotoCarousel";
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 3600;
+
+const URLS = {
+  TICKS: "https://www.mountainproject.com/rss/user-ticks/200263134",
+  BOOKS_READING: "https://oku.club/rss/collection/o8Rau",
+  BOOKS_READ: "https://oku.club/rss/collection/jkCOe",
+  MOVIES: "https://letterboxd.com/drewradcliff/rss/",
+};
+
+async function getFeedSafe(url: string) {
+  try {
+    const feed = await getFeed(url);
+    return feed.items;
+  } catch (error) {
+    console.error(`Failed to fetch RSS from ${url}`, error);
+    return [];
+  }
+}
 
 export default async function Home() {
-  const feed = await getFeed(
-    "https://www.mountainproject.com/rss/user-ticks/200263134",
-  );
+  const [ticks, booksReading, booksRead, movies] = await Promise.all([
+    getFeedSafe(URLS.TICKS),
+    getFeedSafe(URLS.BOOKS_READING),
+    getFeedSafe(URLS.BOOKS_READ),
+    getFeedSafe(URLS.MOVIES),
+  ]);
 
   return (
-    <>
-      <h1 className="mb-8 text-2xl">Drew Radcliff</h1>
-      <p className="mb-8 font-light text-secondary">
-        I like programming and debugging bouldering problems.
-      </p>
-      <div className="mb-24 grid gap-4">
-        <div className="flex items-end pb-4">
-          <h2 className="pr-4 text-lg text-primary">Recent Ticks</h2>
-          <a
-            className="text-sm font-light leading-7 text-link underline-offset-2 hover:underline"
-            href="https://www.mountainproject.com/user/200263134/drew-radcliff/ticks"
-            target="_blank"
+    <main className="pb-32">
+      <header className="mb-16">
+        <h1 className="mb-8 font-serif text-4xl tracking-tight sm:text-5xl">
+          Drew Radcliff
+        </h1>
+        <p className="mb-4 max-w-md text-lg leading-relaxed text-muted">
+          I like programming, debugging bouldering problems, and taking photos.
+        </p>
+        <Socials />
+      </header>
+
+      <div className="space-y-16">
+        <Section title="Film" viewAllLink="https://www.instagram.com/rad_lomo">
+          <PhotoCarousel />
+        </Section>
+
+        <Section
+          title="Climbing"
+          viewAllLink="https://www.mountainproject.com/user/200263134/drew-radcliff/ticks"
+        >
+          <TickList ticks={ticks.slice(0, 5)} />
+        </Section>
+
+        {(booksReading.length > 0 || booksRead.length > 0) && (
+          <Section title="Books" viewAllLink="https://oku.club/user/werd">
+            <div className="space-y-8">
+              {booksReading.length > 0 && (
+                <BookList
+                  books={booksReading.slice(0, 3)}
+                  label="Currently Reading"
+                />
+              )}
+              {booksRead.length > 0 && (
+                <BookList books={booksRead.slice(0, 3)} label="Recently Read" />
+              )}
+            </div>
+          </Section>
+        )}
+
+        {movies.length > 0 && (
+          <Section
+            title="Movies"
+            viewAllLink="https://letterboxd.com/drewradcliff"
           >
-            View All
-          </a>
-        </div>
-        <ul>
-          {feed.items.slice(0, 5).map((tick) => (
-            <li key={tick.guid} className="grid grid-cols-6 font-light">
-              <p className="text-secondary">
-                {moment(tick.isoDate).format("M.D.YY")}
-              </p>
-              <a
-                className="col-span-5 overflow-hidden overflow-ellipsis whitespace-nowrap text-link underline-offset-2 hover:underline"
-                href={tick.link}
-                target="_blank"
-              >
-                {tick.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+            <MovieList movies={movies.slice(0, 5)} />
+          </Section>
+        )}
       </div>
-      <footer className="mb-8 flex gap-6 font-light text-blue-700 underline-offset-2 transition duration-300 ease-out dark:text-blue-200">
-        <Link
-          href="https://github.com/drewradcliff"
-          className="text-link hover:underline"
-          target="_blank"
-        >
-          <div className="flex items-center gap-1">
-            <LuGithub /> GitHub
-          </div>
-        </Link>
-        <Link
-          href="https://x.com/aradcliff0"
-          className="text-link hover:underline"
-          target="_blank"
-        >
-          <div className="flex items-center gap-1">@aradcliff0</div>
-        </Link>
-      </footer>
-    </>
+    </main>
   );
 }
