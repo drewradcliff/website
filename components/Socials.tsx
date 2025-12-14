@@ -14,7 +14,7 @@ export const Socials = () => {
         <LuGithub className="relative h-5 w-5" />
       </Link>
       <Link
-        href="https://x.com/aradcliff0"
+        href="https://x.com/drewradcliff"
         className="group relative rounded-lg p-3 text-muted transition-all hover:text-foreground"
         target="_blank"
         aria-label="X (Twitter)"
