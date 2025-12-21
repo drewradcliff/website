@@ -46,7 +46,10 @@ export default async function Home() {
       </header>
 
       <div className="space-y-16">
-        <Section title="Film" viewAllLink="https://www.instagram.com/rad_lomo">
+        <Section
+          title="Photos"
+          viewAllLink="https://www.instagram.com/rad_lomo"
+        >
           <PhotoCarousel />
         </Section>
 
