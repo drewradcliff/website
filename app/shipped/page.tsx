@@ -2,8 +2,7 @@ const shipped = [
   ["transcript shield", "https://transcriptshield.com/"],
   ["peridot", "https://askperidot.com/"],
   ["skill stats", "https://skillstats.dev/"],
-  ["ai-sdk-router", "https://github.com/drewradcliff/ai-sdk-router"],
-  ["hook", "https://github.com/drewradcliff/hook"],
+  ["ehook", "https://www.ehook.app/"],
   ["condies", "https://www.condies.com/"],
   ["mmmines", "https://mmmines.fly.dev/"],
   [
