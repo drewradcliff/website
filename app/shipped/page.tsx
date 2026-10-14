@@ -1,4 +1,5 @@
 const shipped = [
+  ["wok", "https://github.com/drewradcliff/wok"],
   ["transcript shield", "https://transcriptshield.com/"],
   ["peridot", "https://askperidot.com/"],
   ["skill stats", "https://skillstats.dev/"],
